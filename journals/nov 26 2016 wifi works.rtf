@@ -1,0 +1,32 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;\csgray\c100000;}
+\margl1440\margr1440\vieww17160\viewh12620\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 Nov 26\
+\
+INTERNET IS WORKING \
+\
+Spent a lot of time and generated headaches trying to get both avahi-daemon connecting from MacBook with \'93ping raspberrypi.local\'94 AND the raspberry pi connecting to the internet. \
+\
+At first tried installing \'93wicd-curses" no luck, installed \'93network-manager-gnome\'94 and started it with \'93nm-applet\'94 and it did seem to kind of work! It allowed the ubuntu network manager interface, with the successful connection of a WPA2 network, but it didn\'92t seem reliable on startup.\
+\
+Went back to wpa_supplicant and it did finally work, and still works on startup, what a miracle :) \
+\
+Settings (in photo)\
+-don\'92t need proto\
+-don\'92t need certificate\
+\
+\
+\
+\
+\
+OLDER (September wish)\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 -the usb wifi card in the old raspberry pi would not connect to the school enterprise network, but it would my home network\
+-the new pi works\
+-connecting it from my macbook via ssh can be hard, cause ip address keeps changing, could use a static ip\
+avahi-daemon doesn't work, can't connect to hostname}
