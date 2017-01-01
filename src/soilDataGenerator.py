@@ -52,10 +52,11 @@ def printSerialToFile(data, file):
 
     # if data exists
     if data:
-        # print(data.decode('utf-8')) #actually prints the data
+        # prints data to console
         print("{:%Y-%m-%d %H:%M:%S}  {}".format(datetime.datetime.now(), data.decode('utf-8')))
+        # prints to file, from bytes to unicode
         print("{:%Y-%m-%d %H:%M:%S}  {}".format(datetime.datetime.now(), data.decode('utf-8')),
-              file=f)  # from bytes to unicode, prints to file
+              file=f)
     f.close()
 
 
