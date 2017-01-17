@@ -31,6 +31,17 @@ while True:
     #     Write numbers to stream to append current data on plot,
     #     write lists to overwrite existing data on plot
 
+
+    f = open("data-file", 'a')  # open and close repeatedly to update file
+
+    # if data exists
+    if data:
+        print("{:%Y-%m-%d %H:%M:%S}  {}".format(datetime.datetime.now(), y),
+              file=f)
+    f.close()
+
+
+
     time.sleep(1)  # plot a point every second
 # Close the stream when done plotting
 s.close()
