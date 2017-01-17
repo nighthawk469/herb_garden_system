@@ -64,9 +64,7 @@ def sendToArduino():
     """Unused at moment
     """
     arduino.write(b'5')  # must convert unicode to byte
-    b = mystring.encode('''
-uploads a file to sheridan server every 10 seconds
-''''utf-8')
+    b = mystring.encode('utf-8')
 
 
 def main():
