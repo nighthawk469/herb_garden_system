@@ -8,6 +8,12 @@ TODO:
 -use a better method than os.system
 """
 
+# TODO, this is tightly coupled, not good
+# have one data.decode() statement
+
+# create graph, import stream variables
+from create_graph import *
+
 import serial
 import os
 import time
@@ -21,10 +27,9 @@ def getSerialObject(port):
     try:
         arduino = serial.Serial(port, 9600, timeout=1)
         return arduino
-    except(serial.SerialException):
-        print("Arduino device cannot be found at port {}\n".format(port))
-        time.sleep(10)
-
+    except serial.SerialException as err:
+        print(err)
+        sys.exit()
 
 def getData(arduino):
     """Read one line of data from serial object.
@@ -34,7 +39,6 @@ def getData(arduino):
     data = arduino.readline()[:-2]  # the last bit gets rid of new-line chars/empty data
     return data
 
-
 # not good i think
 def checkIfWateredRecently(data):
     """Check to see if arduino has watered recently to avoid over watering
@@ -43,7 +47,6 @@ def checkIfWateredRecently(data):
         # reset timer
         global start
         start = datetime.datetime.now()
-
 
 def printSerialToFile(data, file):
     """Append serial data to a file and then close the file.
@@ -59,13 +62,24 @@ def printSerialToFile(data, file):
               file=f)
     f.close()
 
-
 def sendToArduino():
     """Unused at moment
     """
     arduino.write(b'5')  # must convert unicode to byte
     b = mystring.encode('utf-8')
 
+def writeToPlotly(data,s):
+    # Current time on x-axis, random numbers on y-axis
+    x = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
+
+    # decode from bytes
+    data = data.decode('utf-8')
+
+    # soil moisture data
+    y = data
+
+    # Send data to your plot
+    s.write(dict(x=x, y=y))
 
 def main():
     """Gets serial object, and write data constantly to file, until keyboard interrupt.
@@ -74,10 +88,25 @@ def main():
     arduino = getSerialObject('/dev/tty.usbmodemFD121')
     startTime = datetime.datetime.now()
 
+    # Provide the stream link object the same token that's associated with the trace we wish to stream to
+    s = py.Stream(stream_id)
+
+    # We then open a connection
+    s.open()
+
     try:
         while True:
             data = getData(arduino)
+
+
+            if data: # otherwise writes a bunch of nothing
+                # write to plotly stream
+                writeToPlotly(data, s)
+
+            # write to file
             printSerialToFile(data, 'data/soilMoisture.csv')
+
+
 
             # check if its been 1 day since last watering
             # if startTime < datetime.datetime.now() - datetime.timedelta(days=1):
@@ -85,6 +114,16 @@ def main():
 
     except(KeyboardInterrupt):
         sys.exit()
+
+    # Close the stream when done plotting
+    s.close()
+
+    # TODO ???
+    # Embed never-ending time series streaming plot
+    tls.embed('streaming-demos', '12')
+
+
+
 
 
 if __name__ == "__main__":

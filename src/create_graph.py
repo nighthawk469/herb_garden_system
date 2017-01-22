@@ -31,7 +31,7 @@ stream_id = stream_ids[0]
 # Make instance of stream id object
 stream_1 = go.Stream(
     token=stream_id,  # link stream id to 'token' key
-    maxpoints=800      # keep a max of 80 pts on screen
+    maxpoints=1440*2      # 1440 minutes in a day
 )
 
 # Initialize trace of streaming plot by embedding the unique stream_id

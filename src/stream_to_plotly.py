@@ -1,3 +1,7 @@
+# OLD
+
+
+# TODO, this is tightly coupled, not good
 # create graph, import stream variables
 from create_graph import *
 
@@ -23,28 +27,25 @@ while True:
     x = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
 
     # first element of returned array
+    ################
     y = (np.random.randn(1))[0]
 
     # Send data to your plot
     s.write(dict(x=x, y=y))
 
-    #     Write numbers to stream to append current data on plot,
-    #     write lists to overwrite existing data on plot
+    # save data to file
+    # open and close repeatedly to update file
+    f = open("data-file.txt", 'a')
 
-
-    f = open("data-file", 'a')  # open and close repeatedly to update file
-
-    # if data exists
-    if data:
-        print("{:%Y-%m-%d %H:%M:%S}  {}".format(datetime.datetime.now(), y),
-              file=f)
+    # timestamp and data
+    print("{:%Y-%m-%d %H:%M:%S}  {}".format(datetime.datetime.now(), y), file=f)
     f.close()
 
+    time.sleep(30)  # plot a point every 30 seconds. Should be same as Arduino code
 
-
-    time.sleep(1)  # plot a point every second
 # Close the stream when done plotting
 s.close()
 
+# TODO ???
 # Embed never-ending time series streaming plot
 tls.embed('streaming-demos','12')
