@@ -10,9 +10,10 @@ except serial.SerialException as err:
 while True:
     try:
         data = arduino.readline()[:-2]
-        print(data.decode('utf-8'))
+        if data:
+            print(data.decode('utf-8'))
 
-        time.sleep(3)
+        #time.sleep(3)
     except serial.SerialException as err:
         print(err)
         sys.exit()
