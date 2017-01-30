@@ -18,6 +18,7 @@ import numpy as np
 import plotly.plotly as py
 import plotly.tools as tls
 import plotly.graph_objs as go
+import logging
 
 tls.set_credentials_file(username='nighthawk469', api_key='Jtnp5cN9CpVh342gb4SV', stream_ids=['4l2hzwbfqg'])
 
@@ -50,6 +51,10 @@ layout = go.Layout(title='Herb Soil Moisture')
 # Make a figure object
 fig = go.Figure(data=data, layout=layout)
 
-# Send fig to Plotly, initialize streaming plot by name, open new tab, extend data
-py.plot(fig, filename='arduino-garden', auto_open=False)
-#optional attribute, auto_open=False
+try:
+    # Send fig to Plotly, initialize streaming plot by name, open new tab, extend data
+    py.plot(fig, filename='arduino-garden', auto_open=False)
+    #optional attribute, auto_open=False
+except Exception as e:
+    print(e)
+    logging.exception("Error:")
