@@ -19,7 +19,13 @@ import os
 import time
 import datetime
 import sys
-import pdb
+import logging
+import random
+
+logging.basicConfig(level=logging.DEBUG,
+                    filename='logs/errors.log',
+                    format = '%(asctime)s %(message)s')
+
 
 
 def getSerialObject(port):
@@ -27,8 +33,9 @@ def getSerialObject(port):
     try:
         arduino = serial.Serial(port, 9600, timeout=1)
         return arduino
-    except serial.SerialException as err:
-        print(err)
+    except serial.SerialException as er:
+        print(er)
+        logging.exception("Error:")
         sys.exit()
 
 def getData(arduino):
@@ -73,7 +80,7 @@ def writeToPlotly(data,s):
     x = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
 
     # decode from bytes
-    data = data.decode('utf-8')
+    #data = data.decode('utf-8')
 
     # soil moisture data
     y = data
@@ -85,7 +92,7 @@ def main():
     """Gets serial object, and write data constantly to file, until keyboard interrupt.
     """
     # find port with 'ls /dev/tty.*'
-    arduino = getSerialObject('/dev/tty.usbmodemFD121')
+    #arduino = getSerialObject('/dev/tty.usbmodemFD121')
     startTime = datetime.datetime.now()
 
     # Provide the stream link object the same token that's associated with the trace we wish to stream to
@@ -94,26 +101,31 @@ def main():
     # We then open a connection
     s.open()
 
-    try:
-        while True:
-            data = getData(arduino)
-
+    # never let the program die
+    while True:
+        try:
+            #data = getData(arduino)
+            data = random.randint(0,10)
 
             if data: # otherwise writes a bunch of nothing
                 # write to plotly stream
                 writeToPlotly(data, s)
+                logging.debug("plotted {}".format(data))
+
+            #temporary, until using arduino again
+            time.sleep(30)
 
             # write to file
-            printSerialToFile(data, 'data/soilMoisture.csv')
-
+            #printSerialToFile(data, 'data/soilMoisture.csv')
 
 
             # check if its been 1 day since last watering
             # if startTime < datetime.datetime.now() - datetime.timedelta(days=1):
             #     sendToArduino()
 
-    except(KeyboardInterrupt):
-        sys.exit()
+        except Exception as er:
+          logging.exception("error:")
+          time.sleep(10)
 
     # Close the stream when done plotting
     s.close()
