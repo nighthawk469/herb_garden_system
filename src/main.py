@@ -76,17 +76,20 @@ def sendToArduino():
     b = mystring.encode('utf-8')
 
 def writeToPlotly(data,s):
-    # Current time on x-axis, random numbers on y-axis
-    x = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
+    try:
+        # Current time on x-axis, random numbers on y-axis
+        x = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
 
-    # decode from bytes
-    #data = data.decode('utf-8')
+        # decode from bytes
+        #data = data.decode('utf-8')
 
-    # soil moisture data
-    y = data
+        # soil moisture data
+        y = data
 
-    # Send data to your plot
-    s.write(dict(x=x, y=y))
+        # Send data to your plot
+        s.write(dict(x=x, y=y))
+    except Exception:
+        logging.exception("Error:")
 
 def main():
     """Gets serial object, and write data constantly to file, until keyboard interrupt.
