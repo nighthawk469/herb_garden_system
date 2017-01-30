@@ -92,6 +92,7 @@ def main():
     """Gets serial object, and write data constantly to file, until keyboard interrupt.
     """
     # find port with 'ls /dev/tty.*'
+    #arduino = getSerialObject('/dev/ttyACM0')
     #arduino = getSerialObject('/dev/tty.usbmodemFD121')
     startTime = datetime.datetime.now()
 
