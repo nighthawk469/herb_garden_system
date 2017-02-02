@@ -81,7 +81,7 @@ def writeToPlotly(data,s):
         x = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
 
         # decode from bytes
-        #data = data.decode('utf-8')
+        data = data.decode('utf-8')
 
         # soil moisture data
         y = data
@@ -95,8 +95,8 @@ def main():
     """Gets serial object, and write data constantly to file, until keyboard interrupt.
     """
     # find port with 'ls /dev/tty.*'
-    #arduino = getSerialObject('/dev/ttyACM0')
-    #arduino = getSerialObject('/dev/tty.usbmodemFD121')
+    arduino = getSerialObject('/dev/ttyACM0') #linux
+    #arduino = getSerialObject('/dev/tty.usbmodemFD121') #mac
     startTime = datetime.datetime.now()
 
     # Provide the stream link object the same token that's associated with the trace we wish to stream to
@@ -108,19 +108,21 @@ def main():
     # never let the program die
     while True:
         try:
-            #data = getData(arduino)
-            data = random.randint(0,10)
+            data = getData(arduino)
+
+            #temp
+            #data = random.randint(0,10)
 
             if data: # otherwise writes a bunch of nothing
                 # write to plotly stream
                 writeToPlotly(data, s)
                 logging.debug("plotted {}".format(data))
 
-            #temporary, until using arduino again
-            time.sleep(30)
+            #temp
+            #time.sleep(30)
 
             # write to file
-            #printSerialToFile(data, 'data/soilMoisture.csv')
+            printSerialToFile(data, 'data/soilMoisture.csv')
 
 
             # check if its been 1 day since last watering
@@ -129,7 +131,8 @@ def main():
 
         except Exception as er:
           logging.exception("error:")
-          time.sleep(10)
+          sys.exit()
+          #time.sleep(60*5)
 
     # Close the stream when done plotting
     s.close()

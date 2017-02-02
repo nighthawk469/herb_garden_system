@@ -3,7 +3,9 @@ import sys
 import time
 
 try:
-    arduino = serial.Serial('/dev/cu.usbmodemFD121', 9600, timeout=1)
+    port = '/dev/ttyACM0' #linux
+    #port = '/dev/tty.usbmodemFD121' #mac
+    arduino = serial.Serial(port, 9600, timeout=1)
 except serial.SerialException as err:
     print(err)
     sys.exit()

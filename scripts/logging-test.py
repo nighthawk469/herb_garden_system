@@ -10,7 +10,7 @@ def main():
 
     while True:
         try:
-            1/0
+            1/0 #exception
             time.sleep(2)
         except Exception as e:
             logging.exception("error:")
