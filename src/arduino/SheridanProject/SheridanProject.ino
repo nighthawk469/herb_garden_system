@@ -14,7 +14,9 @@ void loop() {
   digitalWrite(0, LOW);
   digitalWrite(13, LOW);
 
-  delay(30000); //30 seconds
+  
+  //delay(30000); //30 seconds
+  delay(600000); //10 minutes
 
 
   //if sensor level is low AND time since last water is 1 or 2 days AND not longer than 4 or 5 days
