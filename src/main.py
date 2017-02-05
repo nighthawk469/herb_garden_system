@@ -31,7 +31,7 @@ from signal import signal, SIGPIPE, SIG_DFL
 signal(SIGPIPE,SIG_DFL)
 
 #create plotly graph
-create_graph.graph()
+from create_graph import *
 
 
 def getSerialObject(port):
@@ -105,6 +105,9 @@ def main():
     arduino = getSerialObject('/dev/ttyACM0') #linux
     #arduino = getSerialObject('/dev/tty.usbmodemFD121') #mac
     startTime = datetime.datetime.now()
+
+    #import variable
+    stream_id = create_graph.graph().stream_id
 
     # Provide the stream link object the same token that's associated with the trace we wish to stream to
     s = py.Stream(stream_id)
