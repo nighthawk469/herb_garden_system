@@ -49651,3 +49651,39 @@ plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+2017-02-04 19:26:15,603 Starting new HTTPS connection (1): plot.ly
+2017-02-04 19:26:16,368 "POST /clientresp HTTP/1.1" 200 None
+2017-02-04 19:26:18,089 plotted b'12124'
+2017-02-04 19:29:45,737 Starting new HTTPS connection (1): plot.ly
+2017-02-04 19:29:46,841 "POST /clientresp HTTP/1.1" 200 148
+2017-02-04 19:29:48,486 plotted b'123'
+2017-02-04 19:39:48,650 plotted b'125'
+2017-02-04 20:09:28,546 Starting new HTTPS connection (1): plot.ly
+2017-02-04 20:09:29,299 "POST /clientresp HTTP/1.1" 200 148
+2017-02-04 20:09:30,943 plotted b'1125'
+2017-02-04 20:15:59,167 Starting new HTTPS connection (1): plot.ly
+2017-02-04 20:16:00,136 "POST /clientresp HTTP/1.1" 200 148
+2017-02-04 20:19:31,105 plotted b'1'
+2017-02-04 20:20:30,849 Starting new HTTPS connection (1): plot.ly
+2017-02-04 20:20:31,624 "POST /clientresp HTTP/1.1" 200 148
+2017-02-04 20:25:22,328 Starting new HTTPS connection (1): plot.ly
+2017-02-04 20:25:23,148 "POST /clientresp HTTP/1.1" 200 148
+2017-02-04 20:29:31,255 error:
+Traceback (most recent call last):
+  File "main.py", line 114, in main
+    data = getData(arduino)
+  File "main.py", line 49, in getData
+    data = arduino.readline()[:-2]  # the last bit gets rid of new-line chars/empty data
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 453, in read
+    buf = os.read(self.fd, size-len(read))
+BlockingIOError: [Errno 11] Resource temporarily unavailable
+2017-02-04 20:29:31,259 error:
+Traceback (most recent call last):
+  File "main.py", line 114, in main
+    data = getData(arduino)
+  File "main.py", line 49, in getData
+    data = arduino.readline()[:-2]  # the last bit gets rid of new-line chars/empty data
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 453, in read
+    buf = os.read(self.fd, size-len(read))
+BlockingIOError: [Errno 11] Resource temporarily unavailable
+2017-02-04 20:39:31,418 plotted b'124'
