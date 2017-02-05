@@ -47560,6 +47560,7 @@
 2017-01-30 01:18:11,125 plotted 2
 2017-01-30 01:18:12,126 plotted 9
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 2017-02-04 19:06:42,917 Starting new HTTPS connection (1): plot.ly
 2017-02-04 19:06:45,025 https://plot.ly:443 "POST /clientresp HTTP/1.1" 200 148
 2017-02-04 19:06:45,206 Error:
@@ -47568,6 +47569,8 @@ Traceback (most recent call last):
     self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
 FileNotFoundError: [Errno 2] No such file or directory: '/dev/ttyACM0'
 =======
+=======
+>>>>>>> Stashed changes
 2017-01-30 01:30:19,168 plotted 3
 2017-01-30 01:30:49,201 plotted 6
 2017-01-30 01:43:39,773 Starting new HTTPS connection (1): plot.ly
@@ -49618,11 +49621,15 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
     self._conn.sock.setblocking(True)
 AttributeError: 'NoneType' object has no attribute 'setblocking'
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
   File "/Users/nick/My Files/Comp Science/Projects/herb garden system/src/main.py", line 37, in getSerialObject
     arduino = serial.Serial(port, 9600, timeout=1)
@@ -49632,10 +49639,15 @@ Traceback (most recent call last):
     raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
 serial.serialutil.SerialException: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
 =======
+=======
+>>>>>>> Stashed changes
   File "main.py", line 90, in writeToPlotly
     s.write(dict(x=x, y=y))
   File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
     "Stream has not been opened yet, "
 plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
 2017-02-04 18:58:36,666 plotted b'122'
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
