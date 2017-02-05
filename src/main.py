@@ -30,7 +30,7 @@ logging.basicConfig(level=logging.DEBUG,
 from signal import signal, SIGPIPE, SIG_DFL
 signal(SIGPIPE,SIG_DFL)
 
-#create plotly graph
+#create plotly graph and import variables
 from create_graph import *
 
 
@@ -106,10 +106,8 @@ def main():
     #arduino = getSerialObject('/dev/tty.usbmodemFD121') #mac
     startTime = datetime.datetime.now()
 
-    #import variable
-
     # Provide the stream link object the same token that's associated with the trace we wish to stream to
-    s = py.Stream(create_graph.graph().stream_id)
+    s = py.Stream(stream_id)
 
     # We then open a connection
     s.open()

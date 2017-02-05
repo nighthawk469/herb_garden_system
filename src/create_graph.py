@@ -25,15 +25,22 @@ logging.basicConfig(level=logging.DEBUG,
                     filename='logs/errors.log',
                     format = '%(asctime)s %(message)s')
 
+
+
+tls.set_credentials_file(username='nighthawk469', api_key='Jtnp5cN9CpVh342gb4SV', stream_ids=['4l2hzwbfqg'])
+
+### Create Graph ###
+
+stream_ids = tls.get_credentials_file()['stream_ids']
+
+# Get stream id from stream id list
+stream_id = stream_ids[0]
+
+
+
+
 def graph():
-    tls.set_credentials_file(username='nighthawk469', api_key='Jtnp5cN9CpVh342gb4SV', stream_ids=['4l2hzwbfqg'])
 
-    ### Create Graph ###
-
-    stream_ids = tls.get_credentials_file()['stream_ids']
-
-    # Get stream id from stream id list
-    stream_id = stream_ids[0]
 
     # Make instance of stream id object
     stream_1 = go.Stream(
