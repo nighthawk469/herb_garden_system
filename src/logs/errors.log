@@ -47559,6 +47559,8 @@
 2017-01-30 01:18:10,123 plotted 4
 2017-01-30 01:18:11,125 plotted 2
 2017-01-30 01:18:12,126 plotted 9
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 2017-02-04 19:06:42,917 Starting new HTTPS connection (1): plot.ly
 2017-02-04 19:06:45,025 https://plot.ly:443 "POST /clientresp HTTP/1.1" 200 148
 2017-02-04 19:06:45,206 Error:
@@ -47566,10 +47568,2069 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.6/site-packages/serial/serialposix.py", line 265, in open
     self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
 FileNotFoundError: [Errno 2] No such file or directory: '/dev/ttyACM0'
+=======
+=======
+>>>>>>> Stashed changes
+2017-01-30 01:30:19,168 plotted 3
+2017-01-30 01:30:49,201 plotted 6
+2017-01-30 01:43:39,773 Starting new HTTPS connection (1): plot.ly
+2017-01-30 01:43:40,515 "POST /clientresp HTTP/1.1" 200 225
+2017-01-30 01:43:40,586 Error:
+Traceback (most recent call last):
+  File "/home/pi/herbGarden/src/create_graph.py", line 62, in <module>
+    py.plot(fig, filename='arduino-garden', auto_open=False)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 241, in plot
+    res = _send_to_plotly(figure, **plot_options)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 1438, in _send_to_plotly
+    raise exceptions.PlotlyError(r['error'])
+plotly.exceptions.PlotlyError: Hey there! You've hit one of our API request limits. 
+
+To get unlimited API calls(10,000/day), please upgrade to a paid plan. 
+
+UPGRADE HERE: https://goo.gl/i7glmM 
+
+Thanks for using Plotly! Happy Plotting!
+2017-02-01 20:05:34,750 Starting new HTTPS connection (1): plot.ly
+2017-02-01 20:05:35,806 "POST /clientresp HTTP/1.1" 200 148
+2017-02-01 20:05:37,522 plotted b'11023'
+2017-02-01 20:05:37,523 error:
+Traceback (most recent call last):
+  File "main.py", line 125, in main
+    printSerialToFile(data, 'data/soilMoisture.csv')
+  File "main.py", line 61, in printSerialToFile
+    f = open(file, 'a')  #open and close repeatedly to update file
+FileNotFoundError: [Errno 2] No such file or directory: 'data/soilMoisture.csv'
+2017-02-01 20:06:38,477 Starting new HTTPS connection (1): plot.ly
+2017-02-01 20:06:39,626 "POST /clientresp HTTP/1.1" 200 148
+2017-02-01 20:06:41,275 plotted b'1023'
+2017-02-01 20:08:59,562 Starting new HTTPS connection (1): plot.ly
+2017-02-01 20:09:00,607 "POST /clientresp HTTP/1.1" 200 148
+2017-02-01 20:10:08,556 Starting new HTTPS connection (1): plot.ly
+2017-02-01 20:10:09,480 "POST /clientresp HTTP/1.1" 200 148
+2017-02-01 20:16:41,446 plotted b'3'
+2017-02-01 20:16:42,443 plotted b'1'
+2017-02-01 20:16:42,444 error:
+Traceback (most recent call last):
+  File "main.py", line 125, in main
+    printSerialToFile(data, 'data/soilMoisture.csv')
+  File "main.py", line 66, in printSerialToFile
+    print("{:%Y-%m-%d %H:%M:%S}  {}".format(datetime.datetime.now(), data.decode('utf-8')))
+OSError: [Errno 5] Input/output error
+2017-02-01 20:22:59,354 Starting new HTTPS connection (1): plot.ly
+2017-02-01 20:23:00,127 "POST /clientresp HTTP/1.1" 200 148
+2017-02-01 20:23:01,776 plotted b'1023'
+2017-02-01 20:25:40,687 plotted b'1023'
+2017-02-01 20:28:39,294 Starting new HTTPS connection (1): plot.ly
+2017-02-01 20:28:40,072 "POST /clientresp HTTP/1.1" 200 148
+2017-02-01 20:28:41,791 plotted b'243'
+2017-02-01 20:38:41,994 plotted b'146'
+2017-02-01 20:48:42,804 plotted b'149'
+2017-02-01 20:58:42,404 plotted b'146'
+2017-02-01 21:08:43,191 plotted b'144'
+2017-02-01 21:18:42,818 plotted b'143'
+2017-02-01 21:28:43,613 plotted b'141'
+2017-02-01 21:38:43,244 plotted b'139'
+2017-02-01 21:48:44,031 plotted b'139'
+2017-02-01 21:58:43,668 plotted b'137'
+2017-02-01 22:08:44,463 plotted b'136'
+2017-02-01 22:18:44,092 plotted b'136'
+2017-02-01 22:28:44,880 plotted b'136'
+2017-02-01 22:38:44,515 plotted b'136'
+2017-02-01 22:48:45,309 plotted b'136'
+2017-02-01 22:58:44,939 plotted b'137'
+2017-02-01 23:08:45,734 plotted b'137'
+2017-02-01 23:18:45,368 plotted b'138'
+2017-02-01 23:28:46,170 plotted b'138'
+2017-02-01 23:38:45,798 plotted b'139'
+2017-02-01 23:48:46,595 plotted b'138'
+2017-02-01 23:58:46,231 plotted b'137'
+2017-02-02 00:08:47,114 plotted b'137'
+2017-02-02 00:18:46,659 plotted b'139'
+2017-02-02 00:28:47,455 plotted b'140'
+2017-02-02 00:38:47,093 plotted b'140'
+2017-02-02 00:48:47,893 plotted b'139'
+2017-02-02 00:58:47,522 plotted b'140'
+2017-02-02 01:08:48,325 plotted b'140'
+2017-02-02 01:18:47,961 plotted b'140'
+2017-02-02 01:28:48,752 plotted b'141'
+2017-02-02 01:38:48,390 plotted b'143'
+2017-02-02 01:48:49,188 plotted b'141'
+2017-02-02 01:58:48,824 plotted b'142'
+2017-02-02 02:08:49,622 plotted b'143'
+2017-02-02 02:18:49,261 plotted b'144'
+2017-02-02 02:28:50,054 plotted b'144'
+2017-02-02 02:38:49,695 plotted b'142'
+2017-02-02 02:48:50,485 plotted b'143'
+2017-02-02 02:58:50,128 plotted b'143'
+2017-02-02 03:08:50,925 plotted b'145'
+2017-02-02 03:18:50,562 plotted b'146'
+2017-02-02 03:28:51,360 plotted b'144'
+2017-02-02 03:38:50,998 plotted b'144'
+2017-02-02 03:48:51,857 plotted b'146'
+2017-02-02 03:58:51,432 plotted b'146'
+2017-02-02 04:08:52,319 plotted b'146'
+2017-02-02 04:18:51,869 plotted b'147'
+2017-02-02 04:28:58,192 plotted b'148'
+2017-02-02 04:38:52,306 plotted b'145'
+2017-02-02 04:48:53,123 plotted b'146'
+2017-02-02 04:58:52,744 plotted b'146'
+2017-02-02 05:08:53,568 plotted b'147'
+2017-02-02 05:18:53,181 plotted b'148'
+2017-02-02 05:28:53,999 plotted b'145'
+2017-02-02 05:38:53,619 plotted b'145'
+2017-02-02 05:48:54,438 plotted b'147'
+2017-02-02 05:58:54,056 plotted b'146'
+2017-02-02 06:08:54,873 plotted b'147'
+2017-02-02 06:18:54,494 plotted b'145'
+2017-02-02 06:28:55,316 plotted b'145'
+2017-02-02 06:38:54,928 plotted b'147'
+2017-02-02 06:48:55,852 plotted b'146'
+2017-02-02 06:58:55,357 plotted b'147'
+2017-02-02 07:08:56,175 plotted b'147'
+2017-02-02 07:18:55,786 plotted b'147'
+2017-02-02 07:28:56,624 plotted b'148'
+2017-02-02 07:38:56,216 plotted b'149'
+2017-02-02 07:48:57,023 plotted b'148'
+2017-02-02 07:58:56,642 plotted b'146'
+2017-02-02 08:08:57,466 plotted b'149'
+2017-02-02 08:18:57,072 plotted b'147'
+2017-02-02 08:28:57,896 plotted b'148'
+2017-02-02 08:38:57,497 plotted b'149'
+2017-02-02 08:48:58,316 plotted b'147'
+2017-02-02 08:58:57,923 plotted b'149'
+2017-02-02 09:08:58,738 plotted b'146'
+2017-02-02 09:18:58,335 plotted b'148'
+2017-02-02 09:28:59,160 plotted b'147'
+2017-02-02 09:38:58,748 plotted b'146'
+2017-02-02 09:48:59,552 plotted b'145'
+2017-02-02 09:58:59,156 plotted b'146'
+2017-02-02 10:09:00,000 plotted b'148'
+2017-02-02 10:18:59,573 plotted b'148'
+2017-02-02 10:29:00,425 plotted b'146'
+2017-02-02 10:38:59,990 plotted b'149'
+2017-02-02 10:49:00,808 plotted b'149'
+2017-02-02 10:59:00,399 plotted b'148'
+2017-02-02 11:09:01,224 plotted b'147'
+2017-02-02 11:19:00,808 plotted b'148'
+2017-02-02 11:29:01,627 plotted b'148'
+2017-02-02 11:39:01,207 plotted b'148'
+2017-02-02 11:49:02,042 plotted b'147'
+2017-02-02 11:59:01,608 plotted b'146'
+2017-02-02 12:09:02,413 plotted b'146'
+2017-02-02 12:19:02,008 plotted b'146'
+2017-02-02 12:29:02,832 plotted b'149'
+2017-02-02 12:39:02,412 plotted b'145'
+2017-02-02 12:49:03,224 plotted b'145'
+2017-02-02 12:59:02,804 plotted b'146'
+2017-02-02 13:09:03,628 plotted b'147'
+2017-02-02 13:19:03,192 plotted b'148'
+2017-02-02 13:29:04,096 plotted b'148'
+2017-02-02 13:39:03,580 plotted b'146'
+2017-02-02 13:49:04,479 plotted b'147'
+2017-02-02 13:59:03,980 plotted b'147'
+2017-02-02 14:09:04,822 plotted b'146'
+2017-02-02 14:19:04,375 plotted b'145'
+2017-02-02 14:29:05,294 plotted b'145'
+2017-02-02 14:39:04,780 plotted b'148'
+2017-02-02 14:49:06,824 plotted b'146'
+2017-02-02 14:59:05,189 plotted b'148'
+2017-02-02 15:09:06,017 plotted b'146'
+2017-02-02 15:19:05,593 plotted b'145'
+2017-02-02 15:29:06,398 plotted b'146'
+2017-02-02 15:39:05,993 plotted b'145'
+2017-02-02 15:49:06,785 plotted b'145'
+2017-02-02 15:59:06,392 plotted b'146'
+2017-02-02 16:09:07,197 plotted b'147'
+2017-02-02 16:19:06,793 plotted b'146'
+2017-02-02 16:29:07,588 plotted b'146'
+2017-02-02 16:39:07,190 plotted b'147'
+2017-02-02 16:49:07,990 plotted b'146'
+2017-02-02 16:59:07,590 plotted b'147'
+2017-02-02 17:09:08,394 plotted b'147'
+2017-02-02 17:19:07,982 plotted b'145'
+2017-02-02 17:29:08,791 plotted b'148'
+2017-02-02 17:39:08,370 plotted b'145'
+2017-02-02 17:49:09,179 plotted b'146'
+2017-02-02 17:59:08,746 plotted b'149'
+2017-02-02 18:09:09,528 plotted b'147'
+2017-02-02 18:19:09,112 plotted b'148'
+2017-02-02 18:29:09,905 plotted b'145'
+2017-02-02 18:39:09,480 plotted b'147'
+2017-02-02 18:49:10,290 plotted b'147'
+2017-02-02 18:59:09,859 plotted b'148'
+2017-02-02 19:09:10,691 plotted b'148'
+2017-02-02 19:19:10,247 plotted b'147'
+2017-02-02 19:29:11,059 plotted b'149'
+2017-02-02 19:39:10,646 plotted b'148'
+2017-02-02 19:49:11,445 plotted b'147'
+2017-02-02 19:59:11,058 plotted b'147'
+2017-02-02 20:09:11,872 plotted b'147'
+2017-02-02 20:19:11,471 plotted b'148'
+2017-02-02 20:29:12,275 plotted b'148'
+2017-02-02 20:39:11,887 plotted b'149'
+2017-02-02 20:49:12,699 plotted b'149'
+2017-02-02 20:59:12,307 plotted b'146'
+2017-02-02 21:09:13,132 plotted b'145'
+2017-02-02 21:19:12,728 plotted b'149'
+2017-02-02 21:29:13,545 plotted b'146'
+2017-02-02 21:39:13,150 plotted b'146'
+2017-02-02 21:49:13,973 plotted b'149'
+2017-02-02 21:59:13,574 plotted b'147'
+2017-02-02 22:09:14,394 plotted b'146'
+2017-02-02 22:19:14,000 plotted b'146'
+2017-02-02 22:29:14,803 plotted b'146'
+2017-02-02 22:39:14,424 plotted b'146'
+2017-02-02 22:49:15,251 plotted b'149'
+2017-02-02 22:59:14,850 plotted b'145'
+2017-02-02 23:09:15,669 plotted b'148'
+2017-02-02 23:19:15,279 plotted b'145'
+2017-02-02 23:29:16,108 plotted b'147'
+2017-02-02 23:39:15,709 plotted b'147'
+2017-02-02 23:49:16,523 plotted b'146'
+2017-02-02 23:59:16,142 plotted b'147'
+2017-02-03 00:09:16,964 plotted b'146'
+2017-02-03 00:19:16,580 plotted b'145'
+2017-02-03 00:29:17,460 plotted b'147'
+2017-02-03 00:39:17,013 plotted b'147'
+2017-02-03 00:49:17,835 plotted b'147'
+2017-02-03 00:59:17,446 plotted b'148'
+2017-02-03 01:09:18,275 plotted b'146'
+2017-02-03 01:19:17,880 plotted b'147'
+2017-02-03 01:29:18,707 plotted b'146'
+2017-02-03 01:39:18,318 plotted b'145'
+2017-02-03 01:49:19,373 plotted b'146'
+2017-02-03 01:59:18,755 plotted b'148'
+2017-02-03 02:09:19,584 plotted b'146'
+2017-02-03 02:19:19,194 plotted b'144'
+2017-02-03 02:29:20,017 plotted b'148'
+2017-02-03 02:39:19,631 plotted b'147'
+2017-02-03 02:49:20,447 plotted b'147'
+2017-02-03 02:59:20,070 plotted b'145'
+2017-02-03 03:09:20,886 plotted b'146'
+2017-02-03 03:19:20,508 plotted b'144'
+2017-02-03 03:29:21,565 plotted b'145'
+2017-02-03 03:39:20,949 plotted b'147'
+2017-02-03 03:49:21,768 plotted b'147'
+2017-02-03 03:59:21,391 plotted b'147'
+2017-02-03 04:09:22,214 plotted b'146'
+2017-02-03 04:19:21,833 plotted b'146'
+2017-02-03 04:29:22,652 plotted b'147'
+2017-02-03 04:39:22,271 plotted b'146'
+2017-02-03 04:49:23,097 plotted b'144'
+2017-02-03 04:59:22,712 plotted b'146'
+2017-02-03 05:09:23,534 plotted b'148'
+2017-02-03 05:19:23,146 plotted b'145'
+2017-02-03 05:29:23,961 plotted b'148'
+2017-02-03 05:39:23,581 plotted b'145'
+2017-02-03 05:49:24,401 plotted b'149'
+2017-02-03 05:59:24,014 plotted b'147'
+2017-02-03 06:09:24,833 plotted b'149'
+2017-02-03 06:19:24,448 plotted b'148'
+2017-02-03 06:29:25,268 plotted b'147'
+2017-02-03 06:39:24,881 plotted b'145'
+2017-02-03 06:49:25,704 plotted b'147'
+2017-02-03 06:59:25,314 plotted b'146'
+2017-02-03 07:09:26,126 plotted b'147'
+2017-02-03 07:19:25,744 plotted b'149'
+2017-02-03 07:29:26,570 plotted b'147'
+2017-02-03 07:39:26,173 plotted b'148'
+2017-02-03 07:49:26,990 plotted b'144'
+2017-02-03 07:59:26,602 plotted b'146'
+2017-02-03 08:09:27,430 plotted b'147'
+2017-02-03 08:19:27,035 plotted b'147'
+2017-02-03 08:29:27,856 plotted b'147'
+2017-02-03 08:39:27,465 plotted b'146'
+2017-02-03 08:49:28,278 plotted b'146'
+2017-02-03 08:59:27,886 plotted b'147'
+2017-02-03 09:09:28,709 plotted b'146'
+2017-02-03 09:19:28,315 plotted b'146'
+2017-02-03 09:29:29,134 plotted b'146'
+2017-02-03 09:39:28,741 plotted b'147'
+2017-02-03 09:49:29,760 plotted b'146'
+2017-02-03 09:59:29,166 plotted b'144'
+2017-02-03 10:09:29,983 plotted b'144'
+2017-02-03 10:19:29,579 plotted b'147'
+2017-02-03 10:29:30,458 plotted b'147'
+2017-02-03 10:39:29,993 plotted b'147'
+2017-02-03 10:49:30,831 plotted b'147'
+2017-02-03 10:59:30,413 plotted b'147'
+2017-02-03 11:09:31,239 plotted b'149'
+2017-02-03 11:19:30,833 plotted b'146'
+2017-02-03 11:29:31,666 plotted b'147'
+2017-02-03 11:39:31,247 plotted b'147'
+2017-02-03 11:49:32,133 plotted b'149'
+2017-02-03 11:59:31,648 plotted b'147'
+2017-02-03 12:09:32,499 plotted b'146'
+2017-02-03 12:19:32,041 plotted b'148'
+2017-02-03 12:29:32,856 plotted b'147'
+2017-02-03 12:39:32,434 plotted b'150'
+2017-02-03 12:49:33,228 plotted b'147'
+2017-02-03 12:59:32,822 plotted b'147'
+2017-02-03 13:09:33,636 plotted b'148'
+2017-02-03 13:19:33,205 plotted b'148'
+2017-02-03 13:29:34,061 plotted b'147'
+2017-02-03 13:39:33,580 plotted b'148'
+2017-02-03 13:49:34,425 plotted b'147'
+2017-02-03 13:59:33,951 plotted b'147'
+2017-02-03 14:09:34,967 plotted b'147'
+2017-02-03 14:19:34,337 plotted b'149'
+2017-02-03 14:29:35,158 plotted b'150'
+2017-02-03 14:39:34,725 plotted b'146'
+2017-02-03 14:49:35,529 plotted b'149'
+2017-02-03 14:59:35,113 plotted b'147'
+2017-02-03 15:09:35,912 plotted b'149'
+2017-02-03 15:19:35,501 plotted b'146'
+2017-02-03 15:29:36,325 plotted b'150'
+2017-02-03 15:39:35,912 plotted b'150'
+2017-02-03 15:49:36,744 plotted b'147'
+2017-02-03 15:59:36,325 plotted b'148'
+2017-02-03 16:09:37,162 plotted b'147'
+2017-02-03 16:19:36,738 plotted b'152'
+2017-02-03 16:29:37,551 plotted b'151'
+2017-02-03 16:39:37,158 plotted b'149'
+2017-02-03 16:49:38,224 plotted b'147'
+2017-02-03 16:59:37,571 plotted b'149'
+2017-02-03 17:09:38,383 plotted b'149'
+2017-02-03 17:19:37,987 plotted b'149'
+2017-02-03 17:29:38,803 plotted b'149'
+2017-02-03 17:39:38,404 plotted b'153'
+2017-02-03 17:49:39,218 plotted b'150'
+2017-02-03 17:59:38,821 plotted b'151'
+2017-02-03 18:09:39,635 plotted b'149'
+2017-02-03 18:19:39,242 plotted b'150'
+2017-02-03 18:29:40,055 plotted b'151'
+2017-02-03 18:39:39,667 plotted b'148'
+2017-02-03 18:49:40,724 plotted b'148'
+2017-02-03 18:59:40,088 plotted b'147'
+2017-02-03 19:09:40,905 plotted b'150'
+2017-02-03 19:52:15,498 Starting new HTTPS connection (1): plot.ly
+2017-02-03 19:52:16,277 "POST /clientresp HTTP/1.1" 200 148
+2017-02-03 19:52:17,991 plotted b'156155'
+2017-02-03 19:58:10,481 Starting new HTTPS connection (1): plot.ly
+2017-02-03 19:58:11,738 "POST /clientresp HTTP/1.1" 200 148
+2017-02-03 19:58:13,382 plotted b'174'
+2017-02-03 20:08:13,536 plotted b'113'
+2017-02-03 20:18:14,277 plotted b'112'
+2017-02-03 20:28:13,835 plotted b'107'
+2017-02-03 20:38:14,564 plotted b'105'
+2017-02-03 20:48:14,125 plotted b'105'
+2017-02-03 20:58:14,850 plotted b'106'
+2017-02-03 21:08:14,410 plotted b'106'
+2017-02-03 21:18:15,135 plotted b'106'
+2017-02-03 21:28:14,692 plotted b'108'
+2017-02-03 21:38:15,412 plotted b'109'
+2017-02-03 21:48:14,968 plotted b'108'
+2017-02-03 21:58:15,689 plotted b'109'
+2017-02-03 22:08:15,247 plotted b'109'
+2017-02-03 22:18:15,975 plotted b'109'
+2017-02-03 22:28:15,530 plotted b'109'
+2017-02-03 22:38:16,269 plotted b'110'
+2017-02-03 22:48:15,809 plotted b'110'
+2017-02-03 22:58:16,536 plotted b'110'
+2017-02-03 23:08:16,087 plotted b'111'
+2017-02-03 23:18:16,815 plotted b'111'
+2017-02-03 23:28:16,370 plotted b'110'
+2017-02-03 23:38:17,090 plotted b'111'
+2017-02-03 23:48:16,647 plotted b'111'
+2017-02-03 23:58:17,372 plotted b'111'
+2017-02-04 00:08:16,931 plotted b'111'
+2017-02-04 00:18:17,751 plotted b'111'
+2017-02-04 00:28:17,213 plotted b'111'
+2017-02-04 00:38:17,947 plotted b'111'
+2017-02-04 00:48:17,496 plotted b'110'
+2017-02-04 00:58:18,268 plotted b'112'
+2017-02-04 01:08:17,778 plotted b'112'
+2017-02-04 01:18:18,498 plotted b'112'
+2017-02-04 01:28:18,061 plotted b'112'
+2017-02-04 01:38:18,829 plotted b'111'
+2017-02-04 01:48:18,343 plotted b'111'
+2017-02-04 01:58:19,071 plotted b'113'
+2017-02-04 02:08:18,626 plotted b'111'
+2017-02-04 02:18:19,349 plotted b'111'
+2017-02-04 02:28:18,906 plotted b'112'
+2017-02-04 02:38:19,630 plotted b'112'
+2017-02-04 02:48:19,189 plotted b'112'
+2017-02-04 02:58:19,964 plotted b'113'
+2017-02-04 03:08:19,474 plotted b'113'
+2017-02-04 03:18:20,197 plotted b'113'
+2017-02-04 03:28:19,757 plotted b'113'
+2017-02-04 03:38:20,479 plotted b'114'
+2017-02-04 03:48:20,040 plotted b'114'
+2017-02-04 03:58:20,760 plotted b'115'
+2017-02-04 04:08:20,320 plotted b'114'
+2017-02-04 04:18:21,047 plotted b'114'
+2017-02-04 04:28:20,602 plotted b'116'
+2017-02-04 04:38:20,745 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 73, in write
+    .format(msglen=msglen, msg=msg).encode('utf-8'))
+  File "/usr/lib/python3.4/http/client.py", line 890, in send
+    self.sock.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 76, in write
+    self._reconnect()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 312, in _reconnect
+    raise e
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 297, in _reconnect
+    self._connect()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 152, in _connect
+    self._conn.endheaders()
+  File "/usr/lib/python3.4/http/client.py", line 1086, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python3.4/http/client.py", line 924, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.4/http/client.py", line 859, in send
+    self.connect()
+  File "/usr/lib/python3.4/http/client.py", line 836, in connect
+    self.timeout, self.source_address)
+  File "/usr/lib/python3.4/socket.py", line 491, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/usr/lib/python3.4/socket.py", line 530, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+2017-02-04 04:38:20,771 plotted b'115'
+2017-02-04 04:48:20,886 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 04:48:20,888 plotted b'116'
+2017-02-04 04:58:21,025 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 04:58:21,027 plotted b'115'
+2017-02-04 05:08:21,165 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 05:08:21,167 plotted b'116'
+2017-02-04 05:18:21,308 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 05:18:21,310 plotted b'115'
+2017-02-04 05:28:21,448 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 05:28:21,450 plotted b'116'
+2017-02-04 05:38:21,587 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 05:38:21,589 plotted b'116'
+2017-02-04 05:48:21,730 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 05:48:21,733 plotted b'116'
+2017-02-04 05:58:21,874 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 05:58:21,877 plotted b'116'
+2017-02-04 06:08:22,018 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 06:08:22,021 plotted b'116'
+2017-02-04 06:18:22,158 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 06:18:22,160 plotted b'116'
+2017-02-04 06:28:22,301 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 06:28:22,304 plotted b'117'
+2017-02-04 06:38:22,442 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 06:38:22,444 plotted b'115'
+2017-02-04 06:48:22,582 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 06:48:22,584 plotted b'116'
+2017-02-04 06:58:22,723 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 06:58:22,725 plotted b'116'
+2017-02-04 07:08:22,862 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 07:08:22,865 plotted b'115'
+2017-02-04 07:18:23,002 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 07:18:23,004 plotted b'116'
+2017-02-04 07:28:23,140 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 07:28:23,142 plotted b'116'
+2017-02-04 07:38:23,280 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 07:38:23,282 plotted b'115'
+2017-02-04 07:48:23,420 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 07:48:23,422 plotted b'116'
+2017-02-04 07:58:23,558 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 07:58:23,560 plotted b'116'
+2017-02-04 08:08:23,702 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 08:08:23,704 plotted b'116'
+2017-02-04 08:18:23,845 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 08:18:23,847 plotted b'116'
+2017-02-04 08:28:23,989 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 08:28:23,991 plotted b'117'
+2017-02-04 08:38:24,137 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 08:38:24,139 plotted b'116'
+2017-02-04 08:48:24,288 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 08:48:24,290 plotted b'118'
+2017-02-04 08:58:24,442 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 08:58:24,444 plotted b'117'
+2017-02-04 09:08:24,597 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 09:08:24,599 plotted b'118'
+2017-02-04 09:18:24,754 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 09:18:24,756 plotted b'117'
+2017-02-04 09:28:24,914 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 09:28:24,916 plotted b'118'
+2017-02-04 09:38:25,075 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 09:38:25,077 plotted b'118'
+2017-02-04 09:48:25,238 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 09:48:25,240 plotted b'119'
+2017-02-04 09:58:25,404 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 09:58:25,406 plotted b'118'
+2017-02-04 10:08:25,568 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 10:08:25,570 plotted b'118'
+2017-02-04 10:18:25,732 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 10:18:25,734 plotted b'118'
+2017-02-04 10:28:25,896 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 10:28:25,898 plotted b'119'
+2017-02-04 10:38:26,065 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 10:38:26,067 plotted b'119'
+2017-02-04 10:48:26,232 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 10:48:26,235 plotted b'119'
+2017-02-04 10:58:26,402 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 10:58:26,404 plotted b'118'
+2017-02-04 11:08:26,575 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 11:08:26,577 plotted b'118'
+2017-02-04 11:18:26,743 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 11:18:26,745 plotted b'119'
+2017-02-04 11:28:26,919 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 11:28:26,921 plotted b'119'
+2017-02-04 11:38:27,096 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 11:38:27,098 plotted b'117'
+2017-02-04 11:48:27,277 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 11:48:27,279 plotted b'117'
+2017-02-04 11:58:27,462 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 11:58:27,464 plotted b'118'
+2017-02-04 12:08:27,658 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 12:08:27,660 plotted b'118'
+2017-02-04 12:18:27,850 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 12:18:27,852 plotted b'118'
+2017-02-04 12:28:28,064 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 12:28:28,066 plotted b'118'
+2017-02-04 12:38:28,289 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 12:38:28,291 plotted b'118'
+2017-02-04 12:48:28,531 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 12:48:28,538 plotted b'119'
+2017-02-04 12:58:28,788 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 12:58:28,790 plotted b'118'
+2017-02-04 13:08:29,030 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 13:08:29,037 plotted b'119'
+2017-02-04 13:18:29,290 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 13:18:29,292 plotted b'118'
+2017-02-04 13:28:29,538 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 13:28:29,540 plotted b'119'
+2017-02-04 13:38:29,779 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 13:38:29,781 plotted b'119'
+2017-02-04 13:48:30,044 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 13:48:30,046 plotted b'118'
+2017-02-04 13:58:30,320 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 13:58:30,322 plotted b'118'
+2017-02-04 14:08:30,589 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 14:08:30,591 plotted b'118'
+2017-02-04 14:18:30,866 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 14:18:30,868 plotted b'117'
+2017-02-04 14:28:31,134 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 14:28:31,136 plotted b'118'
+2017-02-04 14:38:31,387 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 14:38:31,389 plotted b'117'
+2017-02-04 14:48:31,630 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 14:48:31,632 plotted b'118'
+2017-02-04 14:58:31,871 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 14:58:31,873 plotted b'120'
+2017-02-04 15:08:32,094 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 15:08:32,096 plotted b'120'
+2017-02-04 15:18:32,319 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 15:18:32,321 plotted b'120'
+2017-02-04 15:28:32,554 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 15:28:32,556 plotted b'119'
+2017-02-04 15:38:32,790 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 15:38:32,792 plotted b'119'
+2017-02-04 15:48:33,027 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 15:48:33,029 plotted b'121'
+2017-02-04 15:58:33,262 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 15:58:33,264 plotted b'119'
+2017-02-04 16:08:33,493 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 16:08:33,495 plotted b'121'
+2017-02-04 16:18:33,728 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 16:18:33,730 plotted b'121'
+2017-02-04 16:28:33,956 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 16:28:33,958 plotted b'120'
+2017-02-04 16:38:34,184 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 16:38:34,186 plotted b'122'
+2017-02-04 16:48:34,398 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 16:48:34,400 plotted b'122'
+2017-02-04 16:58:34,601 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 16:58:34,603 plotted b'122'
+2017-02-04 17:08:34,797 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 17:08:34,799 plotted b'122'
+2017-02-04 17:18:34,983 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 17:18:34,986 plotted b'122'
+2017-02-04 17:28:35,161 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 17:28:35,163 plotted b'122'
+2017-02-04 17:38:35,339 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 17:38:35,341 plotted b'123'
+2017-02-04 17:48:35,509 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 17:48:35,511 plotted b'123'
+2017-02-04 17:58:35,679 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 17:58:35,681 plotted b'123'
+2017-02-04 18:08:35,849 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 18:08:35,851 plotted b'123'
+2017-02-04 18:18:36,014 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 18:18:36,016 plotted b'123'
+2017-02-04 18:28:36,179 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 18:28:36,181 plotted b'122'
+2017-02-04 18:38:36,340 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 18:38:36,342 plotted b'122'
+2017-02-04 18:48:36,504 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 18:48:36,506 plotted b'123'
+2017-02-04 18:58:36,664 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 599, in write
+    self._stream.write(jdata, reconnect_on=reconnect_on)
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 39, in write
+    response = self._getresponse()
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/chunked_requests/chunked_request.py", line 191, in _getresponse
+    self._conn.sock.setblocking(True)
+AttributeError: 'NoneType' object has no attribute 'setblocking'
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
   File "/Users/nick/My Files/Comp Science/Projects/herb garden system/src/main.py", line 37, in getSerialObject
     arduino = serial.Serial(port, 9600, timeout=1)
   File "/usr/local/lib/python3.6/site-packages/serial/serialutil.py", line 236, in __init__
@@ -47577,3 +49638,52 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.6/site-packages/serial/serialposix.py", line 268, in open
     raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
 serial.serialutil.SerialException: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+=======
+=======
+>>>>>>> Stashed changes
+  File "main.py", line 90, in writeToPlotly
+    s.write(dict(x=x, y=y))
+  File "/usr/local/lib/python3.4/dist-packages/plotly/plotly/plotly.py", line 602, in write
+    "Stream has not been opened yet, "
+plotly.exceptions.PlotlyError: Stream has not been opened yet, cannot write to a closed connection. Call `open()` on the stream to open the stream.
+2017-02-04 18:58:36,666 plotted b'122'
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+2017-02-04 19:26:15,603 Starting new HTTPS connection (1): plot.ly
+2017-02-04 19:26:16,368 "POST /clientresp HTTP/1.1" 200 None
+2017-02-04 19:26:18,089 plotted b'12124'
+2017-02-04 19:29:45,737 Starting new HTTPS connection (1): plot.ly
+2017-02-04 19:29:46,841 "POST /clientresp HTTP/1.1" 200 148
+2017-02-04 19:29:48,486 plotted b'123'
+2017-02-04 19:39:48,650 plotted b'125'
+2017-02-04 20:09:28,546 Starting new HTTPS connection (1): plot.ly
+2017-02-04 20:09:29,299 "POST /clientresp HTTP/1.1" 200 148
+2017-02-04 20:09:30,943 plotted b'1125'
+2017-02-04 20:15:59,167 Starting new HTTPS connection (1): plot.ly
+2017-02-04 20:16:00,136 "POST /clientresp HTTP/1.1" 200 148
+2017-02-04 20:19:31,105 plotted b'1'
+2017-02-04 20:20:30,849 Starting new HTTPS connection (1): plot.ly
+2017-02-04 20:20:31,624 "POST /clientresp HTTP/1.1" 200 148
+2017-02-04 20:25:22,328 Starting new HTTPS connection (1): plot.ly
+2017-02-04 20:25:23,148 "POST /clientresp HTTP/1.1" 200 148
+2017-02-04 20:29:31,255 error:
+Traceback (most recent call last):
+  File "main.py", line 114, in main
+    data = getData(arduino)
+  File "main.py", line 49, in getData
+    data = arduino.readline()[:-2]  # the last bit gets rid of new-line chars/empty data
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 453, in read
+    buf = os.read(self.fd, size-len(read))
+BlockingIOError: [Errno 11] Resource temporarily unavailable
+2017-02-04 20:29:31,259 error:
+Traceback (most recent call last):
+  File "main.py", line 114, in main
+    data = getData(arduino)
+  File "main.py", line 49, in getData
+    data = arduino.readline()[:-2]  # the last bit gets rid of new-line chars/empty data
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 453, in read
+    buf = os.read(self.fd, size-len(read))
+BlockingIOError: [Errno 11] Resource temporarily unavailable
+2017-02-04 20:39:31,418 plotted b'124'

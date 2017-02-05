@@ -129,7 +129,7 @@ def main():
             #time.sleep(30)
 
             # write to file
-            printSerialToFile(data, 'data/soilMoisture.csv')
+            # printSerialToFile(data, 'data/soilMoisture.csv')
 
 
             # check if its been 1 day since last watering
