@@ -52,7 +52,12 @@ trace1 = go.Scatter(
 data = go.Data([trace1])
 
 # Add title to layout object
-layout = go.Layout(title='Herb Soil Moisture')
+layout = go.Layout(
+    title='Herb Soil Moisture',
+    yaxis=dict(
+        range=[0, 200]
+    )
+)
 
 # Make a figure object
 fig = go.Figure(data=data, layout=layout)

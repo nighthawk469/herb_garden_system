@@ -47559,3 +47559,21 @@
 2017-01-30 01:18:10,123 plotted 4
 2017-01-30 01:18:11,125 plotted 2
 2017-01-30 01:18:12,126 plotted 9
+2017-02-04 19:06:42,917 Starting new HTTPS connection (1): plot.ly
+2017-02-04 19:06:45,025 https://plot.ly:443 "POST /clientresp HTTP/1.1" 200 148
+2017-02-04 19:06:45,206 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/serial/serialposix.py", line 265, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/nick/My Files/Comp Science/Projects/herb garden system/src/main.py", line 37, in getSerialObject
+    arduino = serial.Serial(port, 9600, timeout=1)
+  File "/usr/local/lib/python3.6/site-packages/serial/serialutil.py", line 236, in __init__
+    self.open()
+  File "/usr/local/lib/python3.6/site-packages/serial/serialposix.py", line 268, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'

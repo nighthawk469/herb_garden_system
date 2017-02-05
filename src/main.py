@@ -26,6 +26,9 @@ logging.basicConfig(level=logging.DEBUG,
                     filename='logs/errors.log',
                     format = '%(asctime)s %(message)s')
 
+#fixes IOError: [Errno 32] Broken pipe
+from signal import signal, SIGPIPE, SIG_DFL
+signal(SIGPIPE,SIG_DFL)
 
 
 def getSerialObject(port):
