@@ -107,10 +107,9 @@ def main():
     startTime = datetime.datetime.now()
 
     #import variable
-    stream_id = create_graph.graph().stream_id
 
     # Provide the stream link object the same token that's associated with the trace we wish to stream to
-    s = py.Stream(stream_id)
+    s = py.Stream(create_graph.graph().stream_id)
 
     # We then open a connection
     s.open()
