@@ -12,7 +12,7 @@ TODO:
 # have one data.decode() statement
 
 # create graph, import stream variables
-from create_graph import *
+import create_graph
 
 import serial
 import os
@@ -29,6 +29,9 @@ logging.basicConfig(level=logging.DEBUG,
 #fixes IOError: [Errno 32] Broken pipe
 from signal import signal, SIGPIPE, SIG_DFL
 signal(SIGPIPE,SIG_DFL)
+
+#create plotly graph
+create_graph.graph()
 
 
 def getSerialObject(port):
@@ -97,6 +100,7 @@ def writeToPlotly(data,s):
 def main():
     """Gets serial object, and write data constantly to file, until keyboard interrupt.
     """
+
     # find port with 'ls /dev/tty.*'
     arduino = getSerialObject('/dev/ttyACM0') #linux
     #arduino = getSerialObject('/dev/tty.usbmodemFD121') #mac
@@ -133,9 +137,10 @@ def main():
             #     sendToArduino()
 
         except Exception as er:
-          logging.exception("error:")
-          sys.exit()
-          #time.sleep(60*5)
+            logging.exception("error:")
+            #sys.exit()
+            time.sleep(60*10) #sleep 10 mins
+            create_graph.graph()
 
     # Close the stream when done plotting
     s.close()

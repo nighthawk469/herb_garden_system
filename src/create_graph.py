@@ -25,48 +25,48 @@ logging.basicConfig(level=logging.DEBUG,
                     filename='logs/errors.log',
                     format = '%(asctime)s %(message)s')
 
+def graph():
+    tls.set_credentials_file(username='nighthawk469', api_key='Jtnp5cN9CpVh342gb4SV', stream_ids=['4l2hzwbfqg'])
 
-tls.set_credentials_file(username='nighthawk469', api_key='Jtnp5cN9CpVh342gb4SV', stream_ids=['4l2hzwbfqg'])
+    ### Create Graph ###
 
-### Create Graph ###
+    stream_ids = tls.get_credentials_file()['stream_ids']
 
-stream_ids = tls.get_credentials_file()['stream_ids']
+    # Get stream id from stream id list
+    stream_id = stream_ids[0]
 
-# Get stream id from stream id list
-stream_id = stream_ids[0]
-
-# Make instance of stream id object
-stream_1 = go.Stream(
-    token=stream_id,  # link stream id to 'token' key
-    maxpoints=144      # 1440 minutes in a day. plot every ten minutes
-)
-
-# Initialize trace of streaming plot by embedding the unique stream_id
-trace1 = go.Scatter(
-    x=[],
-    y=[],
-    mode='lines',
-    stream=stream_1         # (!) embed stream id, 1 per trace
-)
-
-data = go.Data([trace1])
-
-# Add title to layout object
-layout = go.Layout(
-    title='Herb Soil Moisture',
-    yaxis=dict(
-        range=[0, 200]
+    # Make instance of stream id object
+    stream_1 = go.Stream(
+        token=stream_id,  # link stream id to 'token' key
+        maxpoints=144      # 1440 minutes in a day. plot every ten minutes
     )
-)
 
-# Make a figure object
-fig = go.Figure(data=data, layout=layout)
+    # Initialize trace of streaming plot by embedding the unique stream_id
+    trace1 = go.Scatter(
+        x=[],
+        y=[],
+        mode='lines',
+        stream=stream_1         # (!) embed stream id, 1 per trace
+    )
 
-try:
-    # Send fig to Plotly, initialize streaming plot by name, open new tab, extend data
-    py.plot(fig, filename='arduino-garden', auto_open=False)
-    #optional attribute, auto_open=False
-except Exception as e:
-    print(e)
-    logging.exception("Error:")
-    sys.exit()
+    data = go.Data([trace1])
+
+    # Add title to layout object
+    layout = go.Layout(
+        title='Herb Soil Moisture',
+        yaxis=dict(
+            range=[0, 200]
+        )
+    )
+
+    # Make a figure object
+    fig = go.Figure(data=data, layout=layout)
+
+    try:
+        # Send fig to Plotly, initialize streaming plot by name, open new tab, extend data
+        py.plot(fig, filename='arduino-garden', auto_open=False)
+        #optional attribute, auto_open=False
+    except Exception as e:
+        print(e)
+        logging.exception("Error:")
+        sys.exit()
