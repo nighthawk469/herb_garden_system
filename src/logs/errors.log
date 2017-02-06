@@ -49687,3 +49687,23 @@ Traceback (most recent call last):
     buf = os.read(self.fd, size-len(read))
 BlockingIOError: [Errno 11] Resource temporarily unavailable
 2017-02-04 20:39:31,418 plotted b'124'
+2017-02-05 21:12:09,310 Starting new HTTPS connection (1): api.plot.ly
+2017-02-05 21:12:09,969 https://api.plot.ly:443 "GET /v2/plot-schema?sha1=6b351e4c73994452a7ee3b6c52e2a6871da266a0 HTTP/1.1" 200 None
+2017-02-05 21:12:11,304 Starting new HTTPS connection (1): plot.ly
+2017-02-05 21:12:12,163 https://plot.ly:443 "POST /clientresp HTTP/1.1" 200 148
+2017-02-05 21:12:12,235 Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/serial/serialposix.py", line 265, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/nick/My Files/Comp Science/Projects/herb garden system/src/main.py", line 37, in getSerialObject
+    arduino = serial.Serial(port, 9600, timeout=1)
+  File "/usr/local/lib/python3.6/site-packages/serial/serialutil.py", line 236, in __init__
+    self.open()
+  File "/usr/local/lib/python3.6/site-packages/serial/serialposix.py", line 268, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'

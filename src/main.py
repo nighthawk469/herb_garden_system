@@ -11,9 +11,6 @@ TODO:
 # TODO, this is tightly coupled, not good
 # have one data.decode() statement
 
-# create graph, import stream variables
-import create_graph
-
 import serial
 import os
 import time
@@ -140,7 +137,7 @@ def main():
             logging.exception("error:")
             #sys.exit()
             time.sleep(60*10) #sleep 10 mins
-            create_graph.graph()
+            from create_graph import graph
 
     # Close the stream when done plotting
     s.close()
