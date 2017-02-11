@@ -1,4 +1,4 @@
-"""Reads and writes serial data from an attached arduino.
+"""Reads serial data from ardiuno, send data with timestamp to plotly graph.
 
 The data is given with a timestamp from python for graphing purposes.
 
@@ -22,7 +22,7 @@ import plotly.plotly as py
 from plotly_graph import PlotlyGraph
 
 logging.basicConfig(level=logging.DEBUG,
-                    filename='errors.log',
+                    filename='/home/pi/herbGarden/src/errors.log',
                     format = '%(asctime)s %(message)s')
 
 #fixes IOError: [Errno 32] Broken pipe
