@@ -88,6 +88,8 @@ def writeToPlotly(data, s):
 
         # Send data to your plot
         s.write(dict(x=x, y=y))
+
+        logging.debug("plotted {}".format(data))
     except Exception:
         logging.exception("Error:")
 
@@ -96,7 +98,6 @@ def main():
 
     find port with 'ls /dev/tty.*'
     """
-
     # connect to serial object
     #arduino = getSerialObject('/dev/ttyACM0') #linux
     #arduino = getSerialObject('/dev/tty.usbmodemFD121') #mac
@@ -110,10 +111,10 @@ def main():
     # Provide the stream link object the same token that's associated with the trace we wish to stream to
     s = py.Stream(plotly_graph.get_stream_id())
 
-    # We then open a connection
+    # open a connection
     s.open()
 
-    # never let the program die
+    # never let the program die, nvm
     while True:
         try:
             #data = getData(arduino)
@@ -124,14 +125,13 @@ def main():
             #if data and data < 1200: # otherwise writes a bunch of nothing, or writes bad value
                 # write to plotly stream
             writeToPlotly(23, s)
-            #    logging.debug("plotted {}".format(data))
+            time.sleep(10)
 
             #temp
             #time.sleep(30)
 
             # write to file
             # printSerialToFile(data, 'data/soilMoisture.csv')
-
 
             # check if its been 1 day since last watering
             # if startTime < datetime.datetime.now() - datetime.timedelta(days=1):
@@ -141,12 +141,11 @@ def main():
             logging.exception("error:")
             print(er)
             sys.exit()
-            #time.sleep(60*10) #sleep 10 mins
 
-            #restart graph
-            plotly_graph.create_graph()
+            # sleep and restart graph
+            #time.sleep(60*10)
+            #plotly_graph.create_graph()
         except KeyboardInterrupt:
-            print("poop")
             s.close() # Close the stream when done plotting
 
 

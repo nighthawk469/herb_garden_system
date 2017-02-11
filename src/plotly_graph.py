@@ -67,7 +67,11 @@ class PlotlyGraph:
         # Add title to layout object
         layout = go.Layout(
             title='Herb Soil Moisture',
+            xaxis=dict(
+                title='Time'
+            ),
             yaxis=dict(
+                title='Soil Moisture',
                 range=[0, 200]
             )
         )
