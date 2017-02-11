@@ -8,6 +8,7 @@ TODO:
 -i shouldnt need to call data.decode()
 -loose coupling, so i can test code even without arduino available
 
+-get rid of eternal while, i can just restart from dataplicity to reboot
 """
 
 import serial
@@ -139,14 +140,15 @@ def main():
         except Exception as er:
             logging.exception("error:")
             print(er)
-            #sys.exit()
-            time.sleep(60*10) #sleep 10 mins
+            sys.exit()
+            #time.sleep(60*10) #sleep 10 mins
 
             #restart graph
             plotly_graph.create_graph()
+        except KeyboardInterrupt:
+            print("poop")
+            s.close() # Close the stream when done plotting
 
-    # Close the stream when done plotting
-    s.close()
 
     # TODO ???
     # Embed never-ending time series streaming plot
