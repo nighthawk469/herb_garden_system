@@ -5,11 +5,10 @@ The data is given with a timestamp from python for graphing purposes.
 
 TODO:
 -use threading, instead of needing 2 seperate files
--use a better method than os.system
-"""
+-i shouldnt need to call data.decode()
+-loose coupling, so i can test code even without arduino available
 
-# TODO, this is tightly coupled, not good
-# have one data.decode() statement
+"""
 
 import serial
 import os
@@ -18,6 +17,8 @@ import datetime
 import sys
 import logging
 import random
+import plotly.plotly as py
+from plotly_graph import PlotlyGraph
 
 logging.basicConfig(level=logging.DEBUG,
                     filename='logs/errors.log',
@@ -26,9 +27,6 @@ logging.basicConfig(level=logging.DEBUG,
 #fixes IOError: [Errno 32] Broken pipe
 from signal import signal, SIGPIPE, SIG_DFL
 signal(SIGPIPE,SIG_DFL)
-
-#create plotly graph and import variables
-from create_graph import *
 
 
 def getSerialObject(port):
@@ -47,6 +45,7 @@ def getData(arduino):
     The rate by which data comes is determined from the arduino program.
     """
     data = arduino.readline()[:-2]  # the last bit gets rid of new-line chars/empty data
+    data = data.decode('utf-8') # decode from bytes
     return data
 
 # not good i think
@@ -66,9 +65,9 @@ def printSerialToFile(data, file):
     # if data exists
     if data:
         # prints data to console
-        print("{:%Y-%m-%d %H:%M:%S}  {}".format(datetime.datetime.now(), data.decode('utf-8')))
+        print("{:%Y-%m-%d %H:%M:%S}  {}".format(datetime.datetime.now(), data))
         # prints to file, from bytes to unicode
-        print("{:%Y-%m-%d %H:%M:%S}  {}".format(datetime.datetime.now(), data.decode('utf-8')),
+        print("{:%Y-%m-%d %H:%M:%S}  {}".format(datetime.datetime.now(), data),
               file=f)
     f.close()
 
@@ -78,13 +77,10 @@ def sendToArduino():
     arduino.write(b'5')  # must convert unicode to byte
     b = mystring.encode('utf-8')
 
-def writeToPlotly(data,s):
+def writeToPlotly(data, s):
     try:
         # Current time on x-axis, random numbers on y-axis
         x = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
-
-        # decode from bytes
-        data = data.decode('utf-8')
 
         # soil moisture data
         y = data
@@ -96,15 +92,22 @@ def writeToPlotly(data,s):
 
 def main():
     """Gets serial object, and write data constantly to file, until keyboard interrupt.
+
+    find port with 'ls /dev/tty.*'
     """
 
-    # find port with 'ls /dev/tty.*'
-    arduino = getSerialObject('/dev/ttyACM0') #linux
+    # connect to serial object
+    #arduino = getSerialObject('/dev/ttyACM0') #linux
     #arduino = getSerialObject('/dev/tty.usbmodemFD121') #mac
+
     startTime = datetime.datetime.now()
 
+    # create plotly_graph object
+    plotly_graph = PlotlyGraph()
+    plotly_graph.create_graph()
+
     # Provide the stream link object the same token that's associated with the trace we wish to stream to
-    s = py.Stream(stream_id)
+    s = py.Stream(plotly_graph.get_stream_id())
 
     # We then open a connection
     s.open()
@@ -112,15 +115,15 @@ def main():
     # never let the program die
     while True:
         try:
-            data = getData(arduino)
+            #data = getData(arduino)
 
             #temp
             #data = random.randint(0,10)
 
-            if data: # otherwise writes a bunch of nothing
+            #if data and data < 1200: # otherwise writes a bunch of nothing, or writes bad value
                 # write to plotly stream
-                writeToPlotly(data, s)
-                logging.debug("plotted {}".format(data))
+            writeToPlotly(23, s)
+            #    logging.debug("plotted {}".format(data))
 
             #temp
             #time.sleep(30)
@@ -135,9 +138,12 @@ def main():
 
         except Exception as er:
             logging.exception("error:")
+            print(er)
             #sys.exit()
             time.sleep(60*10) #sleep 10 mins
-            from create_graph import graph
+
+            #restart graph
+            plotly_graph.create_graph()
 
     # Close the stream when done plotting
     s.close()

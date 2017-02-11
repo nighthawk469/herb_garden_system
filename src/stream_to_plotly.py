@@ -3,7 +3,7 @@
 
 # TODO, this is tightly coupled, not good
 # create graph, import stream variables
-from create_graph import *
+from plotly_graph import *
 
 
 ### Stream Data ###

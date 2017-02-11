@@ -35,11 +35,23 @@ Ssh issues\
 \b \cf0 Keep process running after exiting ssh session\
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 
-\b0 \cf0 -screen python3 main.py\
+\b0 \cf0 # method 1\
+-screen python3 main.py\
 -then, Ctrl-A, Ctrl-D\
 -to resume, screen -r\
+\
+# method 2\
+nohup python3 main.py &\
+\
+# method 3\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-\cf0 \
+\cf0 # run program, then press CTRL-Z\
+# notice the id number\
+disown -h %1 \
+bg 1\
+logout\
+\
+\
 find usb port\
 -Mac, ls /dev/tty.*\
 -linux, usb-checking script\

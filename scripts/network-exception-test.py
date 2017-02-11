@@ -38,7 +38,7 @@ stream_1 = go.Stream(
 trace1 = go.Scatter(
     x=[],
     y=[],
-    mode='lines+markers',
+    mode='lines',
     stream=stream_1         # (!) embed stream id, 1 per trace
 )
 
@@ -51,7 +51,7 @@ layout = go.Layout(title='Time Series')
 fig = go.Figure(data=data, layout=layout)
 
 # Send fig to Plotly, initialize streaming plot by name, open new tab, extend data
-py.plot(fig, filename='booba')
+py.plot(fig, filename='arduino-garden')
 #optional attributes, auto_open=False, fileopt='extend'
 
 
@@ -67,7 +67,7 @@ s.open()
 import datetime
 import time
 
-i = 0  # a counter
+i = -8  # a counter
 k = 5  # some shape parameter
 
 # Delay start of stream by 5 sec (time to switch tabs)
@@ -78,7 +78,10 @@ while True:
     x = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
 
     # first element of returned array
-    y = (np.random.randn(1))[0]
+    #y = (np.random.randn(1))[0]
+
+    #exponential function generator
+    y = 0.3 * (1.3 ** i)
 
     # Send data to your plot
     s.write(dict(x=x, y=y))
@@ -88,9 +91,11 @@ while True:
 
     print("success")
 
-    time.sleep(1)  # plot a point every second
+    i += 0.2
+
+    time.sleep(0.2)  # plot a point every second
 # Close the stream when done plotting
 s.close()
 
 # Embed never-ending time series streaming plot
-tls.embed('streaming-demos','12')
+#tls.embed('streaming-demos','12')
