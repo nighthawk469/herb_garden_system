@@ -22,7 +22,7 @@ import plotly.plotly as py
 from plotly_graph import PlotlyGraph
 
 logging.basicConfig(level=logging.DEBUG,
-                    filename='logs/errors.log',
+                    filename='errors.log',
                     format = '%(asctime)s %(message)s')
 
 #fixes IOError: [Errno 32] Broken pipe
