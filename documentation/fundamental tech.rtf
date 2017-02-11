@@ -51,6 +51,13 @@ disown -h %1 \
 bg 1\
 logout\
 \
+#startup of system startup\
+crontab -e\
+@reboot python3 /home/pi/herbGarden/src/main.py\
+\
+#show crontabs\
+crontab -l\
+\
 \
 find usb port\
 -Mac, ls /dev/tty.*\

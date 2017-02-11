@@ -21,9 +21,6 @@ import plotly.graph_objs as go
 import logging
 import sys
 
-logging.basicConfig(level=logging.DEBUG,
-                    filename='logs/errors.log',
-                    format = '%(asctime)s %(message)s')
 
 tls.set_credentials_file(username='nighthawk469', api_key='Jtnp5cN9CpVh342gb4SV', stream_ids=['4l2hzwbfqg'])
 
