@@ -145,6 +145,7 @@ def main():
             #time.sleep(60*10)
             #plotly_graph.create_graph()
         except KeyboardInterrupt:
+            logging.exception("error:")
             s.close() # Close the stream when done plotting
 
 
