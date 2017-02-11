@@ -99,7 +99,7 @@ def main():
     find port with 'ls /dev/tty.*'
     """
     # connect to serial object
-    #arduino = getSerialObject('/dev/ttyACM0') #linux
+    arduino = getSerialObject('/dev/ttyACM0') #linux
     #arduino = getSerialObject('/dev/tty.usbmodemFD121') #mac
 
     startTime = datetime.datetime.now()
@@ -117,15 +117,14 @@ def main():
     # never let the program die, nvm
     while True:
         try:
-            #data = getData(arduino)
+            data = getData(arduino)
 
             #temp
             #data = random.randint(0,10)
 
-            #if data and data < 1200: # otherwise writes a bunch of nothing, or writes bad value
-                # write to plotly stream
-            writeToPlotly(23, s)
-            time.sleep(10)
+            if data and data < 1200: # otherwise writes a bunch of nothing, or writes bad value
+                #write to plotly stream
+                writeToPlotly(data, s)
 
             #temp
             #time.sleep(30)
