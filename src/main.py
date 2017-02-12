@@ -129,7 +129,7 @@ def main():
             #temp
             #data = random.randint(0,10)
 
-            if data and int(data) < 1200: # otherwise writes a bunch of nothing, or writes bad value
+            if data: # otherwise writes a bunch of nothing, or writes bad value
                 #write to plotly stream
                 writeToPlotly(data, s)
 
