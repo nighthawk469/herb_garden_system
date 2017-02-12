@@ -118,6 +118,9 @@ def main():
     # open a connection
     s.open()
 
+    # get the first round of data, which is usually not accurate
+    data = getData(arduino)
+
     # never let the program die, nvm
     while True:
         try:
