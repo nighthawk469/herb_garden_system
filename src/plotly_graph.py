@@ -35,7 +35,6 @@ class PlotlyGraph:
     def __init__(self):
         self.stream_id = ""
 
-
     def create_graph(self):
         """
         Create or restart streaming graph

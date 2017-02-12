@@ -45,9 +45,13 @@ def getData(arduino):
 
     The rate by which data comes is determined from the arduino program.
     """
-    data = arduino.readline()[:-2]  # the last bit gets rid of new-line chars/empty data
-    data = data.decode('utf-8') # decode from bytes
-    return data
+    try:
+        data = arduino.readline()[:-2]  # the last bit gets rid of new-line chars/empty data
+        data = data.decode('utf-8') # decode from bytes
+        return data
+    except Exception as e:
+        logging.exception("error:")
+
 
 # not good i think
 def checkIfWateredRecently(data):
