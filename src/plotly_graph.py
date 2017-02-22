@@ -71,7 +71,7 @@ class PlotlyGraph:
             ),
             yaxis=dict(
                 title='Soil Moisture',
-                range=[0, 200]
+                range=[0, 400]
             )
         )
 

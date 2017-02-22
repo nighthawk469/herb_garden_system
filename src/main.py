@@ -108,7 +108,7 @@ def main():
 
     startTime = datetime.datetime.now()
 
-    # create plotly_graph object
+    # create PlotlyGraph object
     plotly_graph = PlotlyGraph()
     plotly_graph.create_graph()
 
@@ -118,10 +118,10 @@ def main():
     # open a connection
     s.open()
 
-    # get the first round of data, which is usually not accurate
+    # get and not use the first round of data, which is usually not accurate
     data = getData(arduino)
 
-    # never let the program die, nvm
+    # repeat until keyboard interrupt
     while True:
         try:
             data = getData(arduino)
