@@ -15,7 +15,7 @@ void loop() {
   digitalWrite(13, LOW);
 
   
-  delay(30000); //30 seconds
+  //delay(30000); //30 seconds
   //delay(600000); //10 minutes
   delay(300000); //5 minutes
 
