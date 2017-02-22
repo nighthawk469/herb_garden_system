@@ -49,8 +49,9 @@ def getData(arduino):
         data = arduino.readline()[:-2]  # the last bit gets rid of new-line chars/empty data
         data = data.decode('utf-8') # decode from bytes
         return data
-    except Exception as e:
+    except Exception as er:
         logging.exception("error:")
+        print(er)
 
 
 # not good i think
@@ -94,8 +95,9 @@ def writeToPlotly(data, s):
         s.write(dict(x=x, y=y))
 
         logging.debug("plotted {}".format(data))
-    except Exception:
+    except Exception as er:
         logging.exception("Error:")
+        print(er)
 
 def main():
     """Gets serial object, and write data constantly to file, until keyboard interrupt.
