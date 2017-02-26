@@ -72,7 +72,7 @@ def printSerialToFile(data, file):
     if data:
         # prints data to console
         print("{:%Y-%m-%d %H:%M:%S}  {}".format(datetime.datetime.now(), data))
-        # prints to file, from bytes to unicode
+        # prints to file
         print("{:%Y-%m-%d %H:%M:%S}  {}".format(datetime.datetime.now(), data),
               file=f)
     f.close()
@@ -134,6 +134,7 @@ def main():
             if data: # otherwise writes a bunch of nothing, or writes bad value
                 #write to plotly stream
                 writeToPlotly(data, s)
+                print("{:%Y-%m-%d %H:%M:%S}  {}".format(datetime.datetime.now(), data))
 
             #temp
             #time.sleep(30)
