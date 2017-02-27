@@ -81,6 +81,7 @@ class PlotlyGraph:
         try:
             # Send fig to Plotly, initialize streaming plot by name, open new tab, extend data
             py.plot(fig, filename='arduino-garden', auto_open=False)
+            print("plotted to plotly")
             # optional attribute, auto_open=False
         except Exception as e:
             print(e)
