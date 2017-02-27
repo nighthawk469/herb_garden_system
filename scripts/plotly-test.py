@@ -100,4 +100,4 @@ except KeyboardInterrupt:
     s.close()
 
 # Embed never-ending time series streaming plot
-#tls.embed('streaming-demos','12')
+tls.embed('streaming-demos','12')

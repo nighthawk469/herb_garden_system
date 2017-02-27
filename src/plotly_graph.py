@@ -50,7 +50,7 @@ class PlotlyGraph:
         # Make instance of stream id object
         stream_1 = go.Stream(
             token=stream_id,  # link stream id to 'token' key
-            maxpoints=144      # 1440 minutes in a day. plot every ten minutes
+            maxpoints=288      # 1440 minutes in a day. plot every ten minutes
         )
 
         # Initialize trace of streaming plot by embedding the unique stream_id
