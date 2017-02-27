@@ -84,8 +84,7 @@ class PlotlyGraph:
             # optional attribute, auto_open=False
         except Exception as e:
             print(e)
-            logging.exception("Error:")
-            sys.exit()
+            logging.exception("Could not plot:")
 
     def get_stream_id(self):
         return self.stream_id
