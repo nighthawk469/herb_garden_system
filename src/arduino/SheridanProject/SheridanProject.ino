@@ -16,9 +16,9 @@ void loop() {
 
   
   //delay(30000); //30 seconds
-  //delay(600000); //10 minutes
+  delay(600000); //10 minutes
   //delay(300000); //5 minutes
-  delay(150000); //2.5mins
+  //delay(150000); //2.5mins
 
 
   //if sensor level is low AND time since last water is 1 or 2 days AND not longer than 4 or 5 days

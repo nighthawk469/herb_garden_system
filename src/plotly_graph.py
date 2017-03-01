@@ -19,11 +19,8 @@ import plotly.plotly as py
 import plotly.tools as tls
 import plotly.graph_objs as go
 import logging
+import datetime
 import sys
-
-logging.basicConfig(level=logging.DEBUG,
-                    filename='/home/pi/herbGarden/src/errors.log',
-                    format = '%(asctime)s %(message)s')
 
 tls.set_credentials_file(username='nighthawk469', api_key='Jtnp5cN9CpVh342gb4SV', stream_ids=['4l2hzwbfqg'])
 
@@ -33,7 +30,8 @@ class PlotlyGraph:
     A session of a plotly streaming graph
     """
     def __init__(self):
-        self.stream_id = ""
+        self.stream_id = None
+        self.stream_link = None
 
     def create_graph(self):
         """
@@ -42,16 +40,16 @@ class PlotlyGraph:
         stream_ids = tls.get_credentials_file()['stream_ids']
 
         # Get stream id from stream id list
-        stream_id = stream_ids[0]
-
-        #set instance variable
-        self.stream_id = stream_id
+        self.stream_id = stream_ids[0]
 
         # Make instance of stream id object
         stream_1 = go.Stream(
-            token=stream_id,  # link stream id to 'token' key
-            maxpoints=288      # 1440 minutes in a day. plot every ten minutes
+            token = self.stream_id,  # link stream id to 'token' key
+            maxpoints = 288      # 1440 minutes in a day. plot every ten minutes
         )
+
+        # Provide the stream link object the same token that's associated with the trace we wish to stream to
+        self.stream_link = py.Stream(self.stream_id)
 
         # Initialize trace of streaming plot by embedding the unique stream_id
         trace1 = go.Scatter(
@@ -81,11 +79,49 @@ class PlotlyGraph:
         try:
             # Send fig to Plotly, initialize streaming plot by name, open new tab, extend data
             py.plot(fig, filename='arduino-garden', auto_open=False)
-            print("plotted to plotly")
             # optional attribute, auto_open=False
         except Exception as e:
             print(e)
-            logging.exception("Could not plot:")
+            logging.exception("Error:")
+            sys.exit()
+
+    def write_to_stream(self, data):
+        """
+        Write data to a live plotly stream link object
+        """
+        try:
+            # Current time on x-axis, random numbers on y-axis
+            x = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
+
+            # soil moisture data
+            y = data
+
+            # Send data to your plot
+            self.stream_link.write(dict(x=x, y=y))
+
+            logging.debug("plotted {}".format(data))
+        except Exception as er:
+            logging.exception("Could not write:")
+            print(er)
+            sys.exit()
 
     def get_stream_id(self):
         return self.stream_id
+
+    def open(self):
+        """
+        Open connection with plotly stream link object
+        """
+        self.stream_link.open()
+
+    def close(self):
+        """
+        Close connection with plotly stream link object
+        """
+        self.stream_link.close()
+
+    def heartbeat(self):
+        """
+        Keep stream alive. Streams will close after ~1 min of inactivity
+        """
+        self.stream_link.heartbeat()

@@ -22,7 +22,7 @@ import plotly.plotly as py
 from plotly_graph import PlotlyGraph
 
 logging.basicConfig(level=logging.DEBUG,
-                    filename='/home/pi/herbGarden/src/errors.log',
+                    #filename='/home/pi/herbGarden/src/errors.log',
                     format = '%(asctime)s %(message)s')
 
 #fixes IOError: [Errno 32] Broken pipe
@@ -52,6 +52,7 @@ def getData(arduino):
     except Exception as er:
         logging.exception("error:")
         print(er)
+        sys.exit()
 
 
 # not good i think
@@ -83,21 +84,7 @@ def sendToArduino():
     arduino.write(b'5')  # must convert unicode to byte
     b = mystring.encode('utf-8')
 
-def writeToPlotly(data, s):
-    try:
-        # Current time on x-axis, random numbers on y-axis
-        x = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
 
-        # soil moisture data
-        y = data
-
-        # Send data to your plot
-        s.write(dict(x=x, y=y))
-
-        logging.debug("plotted {}".format(data))
-    except Exception as er:
-        logging.exception("Error:")
-        print(er)
 
 def main():
     """Gets serial object, and write data constantly to file, until keyboard interrupt.
@@ -114,11 +101,8 @@ def main():
     plotly_graph = PlotlyGraph()
     plotly_graph.create_graph()
 
-    # Provide the stream link object the same token that's associated with the trace we wish to stream to
-    s = py.Stream(plotly_graph.get_stream_id())
-
     # open a connection
-    s.open()
+    plotly_graph.open()
 
     # get and not use the first round of data, which is usually not accurate
     data = getData(arduino)
@@ -133,11 +117,16 @@ def main():
 
             if data: # otherwise writes a bunch of nothing, or writes bad value
                 #write to plotly stream
-                writeToPlotly(data, s)
-                print("{:%Y-%m-%d %H:%M:%S}  {}".format(datetime.datetime.now(), data))
+                plotly_graph.write_to_stream(data)
+                #print("{:%Y-%m-%d %H:%M:%S}  {}".format(datetime.datetime.now(), data))
 
             #temp
-            #time.sleep(30)
+            #time.sleep(5)
+            #time.sleep(600) #10 minutes
+
+            time.sleep(30)
+            plotly_graph.heartbeat()
+
 
             # write to file
             # printSerialToFile(data, 'data/soilMoisture.csv')
@@ -156,7 +145,8 @@ def main():
             #plotly_graph.create_graph()
         except KeyboardInterrupt:
             logging.exception("error:")
-            s.close() # Close the stream when done plotting
+            plotly_graph.close() # Close the stream when done plotting
+            sys.exit()
 
 
     # TODO ???
