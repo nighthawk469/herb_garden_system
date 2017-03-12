@@ -117,6 +117,8 @@ def main():
 
             # otherwise writes a bunch of nothing, or writes bad value
             if data:
+                # if this takes a particularily long time
+                # then the following hearbeat may fail because the connection will timeout
                 plotly_graph.write_to_stream(data)
                 #print("{:%Y-%m-%d %H:%M:%S}  {}".format(datetime.datetime.now(), data))
 
@@ -141,9 +143,10 @@ def main():
             # sys.exit()
 
             # in case of unpreventable issues (wifi problem, plotly server problem)
-            # sleep 30s and restart graph
+            # sleep 30s and restart graph and reopen connection
             time.sleep(30)
-            plotly_graph.create_graph()
+            plotly_graph.create_graph() #maybe don't need this
+            plotly_graph.open()
         except KeyboardInterrupt:
             logging.exception("keyboard error:")
             plotly_graph.close() # Close the stream when done plotting
