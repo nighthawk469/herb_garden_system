@@ -37,20 +37,20 @@ def getSerialObject(port):
         return arduino
     except serial.SerialException as er:
         print(er)
-        logging.exception("Error:")
+        logging.exception("getting serial object error:")
         sys.exit()
 
-def getData(arduino):
+def readData(arduino):
     """Read one line of data from serial object.
 
-    The rate by which data comes is determined from the arduino program.
+    The rate that the data comes is determined from the arduino program.
     """
     try:
         data = arduino.readline()[:-2]  # the last bit gets rid of new-line chars/empty data
         data = data.decode('utf-8') # decode from bytes
         return data
     except Exception as er:
-        logging.exception("error:")
+        logging.exception("reading serial object error:")
         print(er)
         sys.exit()
 
@@ -105,18 +105,18 @@ def main():
     plotly_graph.open()
 
     # get and not use the first round of data, which is usually not accurate
-    data = getData(arduino)
+    data = readData(arduino)
 
     # repeat until keyboard interrupt
     while True:
         try:
-            data = getData(arduino)
+            data = readData(arduino)
 
             #temp
             #data = random.randint(0,10)
 
-            if data: # otherwise writes a bunch of nothing, or writes bad value
-                #write to plotly stream
+            # otherwise writes a bunch of nothing, or writes bad value
+            if data:
                 plotly_graph.write_to_stream(data)
                 #print("{:%Y-%m-%d %H:%M:%S}  {}".format(datetime.datetime.now(), data))
 
@@ -136,15 +136,16 @@ def main():
             #     sendToArduino()
 
         except Exception as er:
-            logging.exception("error:")
+            logging.exception("general error:")
             print(er)
-            sys.exit()
+            # sys.exit()
 
-            # sleep and restart graph
-            #time.sleep(60*10)
-            #plotly_graph.create_graph()
+            # in case of unpreventable issues (wifi problem, plotly server problem)
+            # sleep 30s and restart graph
+            time.sleep(30)
+            plotly_graph.create_graph()
         except KeyboardInterrupt:
-            logging.exception("error:")
+            logging.exception("keyboard error:")
             plotly_graph.close() # Close the stream when done plotting
             sys.exit()
 

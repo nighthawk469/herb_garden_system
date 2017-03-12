@@ -35,7 +35,7 @@ class PlotlyGraph:
 
     def create_graph(self):
         """
-        Create or restart streaming graph
+        Initalize steaming graph or restart graph
         """
         stream_ids = tls.get_credentials_file()['stream_ids']
 
@@ -76,34 +76,27 @@ class PlotlyGraph:
         # Make a figure object
         fig = go.Figure(data=data, layout=layout)
 
-        try:
-            # Send fig to Plotly, initialize streaming plot by name, open new tab, extend data
-            py.plot(fig, filename='arduino-garden', auto_open=False)
-            # optional attribute, auto_open=False
-        except Exception as e:
-            print(e)
-            logging.exception("Error:")
-            sys.exit()
+
+        # Send fig to Plotly, initialize streaming plot by name, open new tab, extend data
+        py.plot(fig, filename='arduino-garden', auto_open=False, fileopt='extend')
+        # optional attributes, auto_open=False, fileopt='extend'
 
     def write_to_stream(self, data):
         """
         Write data to a live plotly stream link object
+
+        If there is some sort of exception (wifi issue, plotly api issue),
+        cleanly wait 30 secs and then try
         """
-        try:
-            # Current time on x-axis, random numbers on y-axis
-            x = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
+        # Current time on x-axis, random numbers on y-axis
+        x = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
 
-            # soil moisture data
-            y = data
+        # soil moisture data
+        y = data
 
-            # Send data to your plot
-            self.stream_link.write(dict(x=x, y=y))
-
-            logging.debug("plotted {}".format(data))
-        except Exception as er:
-            logging.exception("Could not write:")
-            print(er)
-            sys.exit()
+        # Send data to your plot
+        self.stream_link.write(dict(x=x, y=y))
+        logging.debug("plotted {}".format(data))
 
     def get_stream_id(self):
         return self.stream_id
