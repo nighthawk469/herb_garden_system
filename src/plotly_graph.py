@@ -45,7 +45,7 @@ class PlotlyGraph:
         # Make instance of stream id object
         stream_1 = go.Stream(
             token = self.stream_id,  # link stream id to 'token' key
-            maxpoints = 288      # 1440 minutes in a day. plot every ten minutes
+            maxpoints = 288      # 1440 minutes in a day. plot every ten minutes <-not relevant
         )
 
         # Provide the stream link object the same token that's associated with the trace we wish to stream to
@@ -79,7 +79,7 @@ class PlotlyGraph:
 
 
         # Send fig to Plotly, initialize streaming plot by name, open new tab, extend data
-        py.plot(fig, filename='arduino-garden', auto_open=False)
+        py.plot(fig, filename='arduino-garden', auto_open=False, fileopt='extend')
         # optional attributes, auto_open=False, fileopt='extend'
 
     def write_to_stream(self, data):
