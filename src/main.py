@@ -118,12 +118,12 @@ def main():
             # otherwise writes a bunch of nothing, or writes bad value
             if data:
                 # if this takes a particularily long time
-                # then the following hearbeat may fail because the connection will timeout
+                # then the following heartbeat may fail because the connection will timeout
                 plotly_graph.write_to_stream(data)
                 #print("{:%Y-%m-%d %H:%M:%S}  {}".format(datetime.datetime.now(), data))
 
             #temp
-            #time.sleep(5)
+            #time.sleep(10)
             #time.sleep(600) #10 minutes
 
             time.sleep(30)
@@ -153,9 +153,8 @@ def main():
             sys.exit()
 
 
-    # TODO ???
-    # Embed never-ending time series streaming plot
-    tls.embed('streaming-demos', '12')
+    # generate the HTML code to embed Plotly graphs
+    tls.embed('https://plot.ly/~chris/1638')
 
 
 

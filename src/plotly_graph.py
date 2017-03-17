@@ -65,12 +65,12 @@ class PlotlyGraph:
         layout = go.Layout(
             title='Herb Soil Moisture',
             xaxis=dict(
-                title='Time'
+                title='Time',
+                #autorange=True
             ),
             yaxis=dict(
                 title='Soil Moisture',
-                autorange=True
-                #range=[0, 400]
+                range=[100,220]
             )
         )
 
@@ -79,7 +79,7 @@ class PlotlyGraph:
 
 
         # Send fig to Plotly, initialize streaming plot by name, open new tab, extend data
-        py.plot(fig, filename='arduino-garden', auto_open=False, fileopt='extend')
+        py.plot(fig, filename='arduino-garden', auto_open=False)
         # optional attributes, auto_open=False, fileopt='extend'
 
     def write_to_stream(self, data):
